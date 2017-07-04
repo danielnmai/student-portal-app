@@ -1,1 +1,10 @@
-<h1>SHOW PAGE</h1>
+<h1><% @students.each do |student| %> </h1>
+
+<h3>Student ID: <%= student["id"] %> </h3>
+<h3>First Name: <%= student["first_name"] %> </h3>
+<h3>Last Name: <%= student["last_name"] %> </h3>
+<h3>Email <%= student["email"] %> </h3>
+<h3>Phone: <%= student["phone_number"] %> </h3>  
+<% end %>
+<%= @students %>
+
