@@ -5,23 +5,23 @@ class StudentsController < ApplicationController
   def show
     id = params[:id]
     @id = params[:id]
-    @student = Unirest.get("http://localhost:3001/api/v1/students/#{id}").body
+    @student = Unirest.get("https://polar-earth-87794.herokuapp.com/api/v1/students/#{id}").body
     render 'show.html.erb'
   end
 
   def edit
     @id = params[:id]
-    @student = Unirest.get("http://localhost:3001/api/v1/students/#{@id}").body
+    @student = Unirest.get("https://polar-earth-87794.herokuapp.com/api/v1/students/#{@id}").body
 
     render 'edit.html.erb'
   end
 
   def update
     @id = params[:id]
-    @student = Unirest.get("http://localhost:3001/api/v1/students/#{@id}").body
+    @student = Unirest.get("https://polar-earth-87794.herokuapp.com/api/v1/students/#{@id}").body
 
     @student = Unirest.patch(
-    "http://localhost:3001/api/v1/students/#{@id}.json",
+    "https://polar-earth-87794.herokuapp.com/api/v1/students/#{@id}.json",
     headers: {'Accept' => 'Application/json'},
     parameters: {first_name: params[:first_name]}).body
 
