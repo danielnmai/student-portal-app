@@ -4,6 +4,7 @@ class StudentsController < ApplicationController
 
   def show
     id = params[:id]
+    @id = params[:id]
     @student = Unirest.get("http://localhost:3001/api/v1/students/#{id}").body
     render 'show.html.erb'
   end
