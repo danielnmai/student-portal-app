@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get '/students/:id' => 'students#show'
   get '/students/:id/edit' => 'students#edit'
-  patch '/students/:id' => 'student#update'
+  patch '/students/:id' => 'students#update'
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
