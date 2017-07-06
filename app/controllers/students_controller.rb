@@ -1,8 +1,10 @@
 class StudentsController < ApplicationController
 
+  # has_secure_password
+
   def show
     id = params[:id]
-    @students = Unirest.get("http://localhost:3001/api/v1/students/").body
+    @student = Unirest.get("http://localhost:3001/api/v1/students/#{id}").body
     render 'show.html.erb'
   end
 
