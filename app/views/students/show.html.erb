@@ -1,9 +1,23 @@
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
 
+<div>
+  <h1>Your Information</h1>
+  <h3>First Name: <%= @student["first_name"] %> </h3>
+  <h3>Last Name: <%= @student["last_name"] %> </h3>
+  <h3>Email: <%= @student["email"] %> </h3>
+  <h3>Phone: <%= @student["phone_number"] %> </h3>  
+  <h4>Short Bio: <%= @student["short_bio"] %> </h4>  
+  <h4>LinkedIn Profile: <%= @student["linkedin_url"] %> </h4>  
+  <h4>GitHub Profile: <%= @student["github_url"] %> </h4>  
+  <h4>Twitter Profile: <%= @student["twitter_handle"] %> </h4>  
+  <h4>Photo: <%= @student["photo_url"] %> </h4>  
+</div>
 
-<h3>Student ID: <%= @student["id"] %> </h3>
-<h3>First Name: <%= @student["first_name"] %> </h3>
-<h3>Last Name: <%= @student["last_name"] %> </h3>
-<h3>Email <%= @student["email"] %> </h3>
-<h3>Phone: <%= @student["phone_number"] %> </h3>  
+<div>
+  <button a href="/students/<%= @student["id"] %>/edit">Edit?</button>
+</div>
+
 
 

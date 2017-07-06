@@ -16,8 +16,10 @@ class SessionsController < ApplicationController
     encrypted_password = BCrypt::Password.create(params[:password])
     if student && student["password"] === params[:password]
       session[:student_id] = student["id"]
+      flash[:notice] = "Successfully logged in!"
       redirect_to "/students/#{id}"
     else
+      flash[:notice] = "Something went wrong, try again!"
       redirect_to "/login"
     end
   end
